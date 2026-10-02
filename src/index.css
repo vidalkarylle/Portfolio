@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0a;
+  --panel: #111111;
+  --line: #262626;
+  --line-strong: #404040;
+  --text: #ffffff;
+  --muted: #a3a3a3;
+  --faint: #404040;
+  --code-bg: #161616;
+  --matrix: #00ff41;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-code-bg: var(--code-bg);
+  --color-matrix: var(--matrix);
+
+  --font-mono: "JetBrains Variable Mono", ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Oxanium", "Inter Variable", system-ui, sans-serif;
+
+  --animate-blink: blink 1s step-end infinite;
+
+  --animate-glitch: glitch 3.5s infinite;
+
+  --animate-flicker: flicker 4s infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes flicker {
+    0%,
+    93%,
+    100% {
+      opacity: 1;
+    }
+    94% {
+      opacity: 0.75;
+    }
+    95% {
+      opacity: 1;
+    }
+    96% {
+      opacity: 0.85;
+    }
+    97% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes glitch {
+    0%,
+    86%,
+    100% {
+      text-shadow: none;
+      transform: translate(0, 0);
+    }
+    87% {
+      text-shadow:
+        2px 0 var(--matrix),
+        -2px 0 #ffffff;
+      transform: translate(-2px, 1px);
+    }
+    88% {
+      text-shadow:
+        -2px 0 var(--matrix),
+        2px 0 #ffffff;
+      transform: translate(2px, -1px);
+    }
+    89% {
+      text-shadow: 1px 0 var(--matrix);
+      transform: translate(0, 0);
+    }
+    90% {
+      text-shadow: none;
+    }
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 16px rgb(0 255 65 / 0.4);
+}
+
+@utility bg-dot-grid {
+  background-image: radial-gradient(
+    circle,
+    var(--line-strong) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+@utility bg-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 0.04) 3px,
+    rgb(0 0 0 / 0.04) 4px
+  );
+}
+
+@utility bg-scanlines-dark {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 0.18) 3px,
+    rgb(0 0 0 / 0.18) 4px
+  );
+}
+
+@utility warning-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #000 0,
+    #000 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+@utility bg-grid-dark {
+  background-image: radial-gradient(
+    circle,
+    rgb(0 0 0 / 0.22) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
+
+@utility clip-corner {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--text);
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

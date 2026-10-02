@@ -1,0 +1,9 @@
+{
+  "decisions": [
+    {
+      "date": "2026-10-02",
+      "choice": "Matrix vibe redesign",
+      "details": "Green (#00ff41) added as the single accent on the monochrome base, overriding the earlier no-accent rule per user request. Green is used for: hero digital-rain canvas background, blinking cursor, terminal prompt markers (>, $, //, 01_). Hero typewriter loops (type -> hold -> delete -> retype). Name set to KARYLLE VIDAL."
+    }
+  ]
+}
