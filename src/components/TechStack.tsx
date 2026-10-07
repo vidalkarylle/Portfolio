@@ -19,7 +19,7 @@ export default function TechStack() {
   return (
     <div className="mt-16 flex flex-col gap-8">
       <h3 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
-        <span className="text-matrix">//</span> TECHNICAL SKILLS
+        <span className="text-matrix">//</span> TECH STACK
       </h3>
       <div className="grid gap-5 sm:grid-cols-3">
         {CATEGORIES.map((cat) => (

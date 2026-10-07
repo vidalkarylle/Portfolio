@@ -42,7 +42,7 @@ export default function Home() {
 
         <motion.h1
           variants={item}
-          className="text-glow break-words font-display text-5xl font-extrabold leading-none tracking-tight sm:text-7xl"
+          className="break-words font-display text-[clamp(70px,12vw,160px)] font-medium leading-[0.85] tracking-[-5px] text-[#f2f2f2] [text-shadow:0_0_20px_rgba(255,255,255,0.08)]"
         >
           {typed}
           <span

@@ -34,12 +34,12 @@ export default function Navbar({ route }: NavbarProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-bg/80 backdrop-blur-md">
       <nav
-        className="mx-auto grid h-16 max-w-5xl grid-cols-[1fr_auto_1fr] items-center px-4 sm:px-6"
+        className="relative mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6"
         aria-label="Main navigation"
       >
         <a
           href="#/"
-          className="group flex items-center gap-1.5 justify-self-start rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text"
+          className="group flex items-center gap-1.5 rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-text"
         >
           <span className="font-mono text-matrix">{'>'}</span>
           <span className="rounded-md border border-line px-1.5 py-0.5 font-mono text-sm font-extrabold tracking-tight transition-colors group-hover:border-matrix">
@@ -47,7 +47,7 @@ export default function Navbar({ route }: NavbarProps) {
           </span>
         </a>
 
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
           {LINKS.map((link) => (
             <a
               key={link.id}
@@ -61,17 +61,15 @@ export default function Navbar({ route }: NavbarProps) {
           ))}
         </div>
 
-        <div className="flex items-center justify-end gap-2">
-          <button
-            type="button"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            className="rounded-md border border-line p-2 text-muted transition-colors hover:border-line-strong hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text md:hidden"
-          >
-            {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          className="rounded-md border border-line p-2 text-muted transition-colors hover:border-line-strong hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text md:hidden"
+        >
+          {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+        </button>
       </nav>
 
       <AnimatePresence>

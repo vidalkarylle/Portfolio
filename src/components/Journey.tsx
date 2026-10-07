@@ -4,7 +4,7 @@ export default function Journey() {
   return (
     <div className="flex flex-col gap-6">
       <h3 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
-        <span className="text-matrix">//</span> JOURNEY
+        <span className="text-matrix">//</span> MY JOURNEY
       </h3>
       <div className="flex flex-col gap-6">
         {journey.map((item) => (

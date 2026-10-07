@@ -24,27 +24,27 @@ function AboutBox() {
 export default function About() {
   return (
     <section className="min-h-screen py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid items-start gap-10 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <AboutBox />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-          >
-            <Journey />
-          </motion.div>
-        </div>
+      <div className="mx-auto flex max-w-4xl flex-col gap-12 px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
+          transition={{ duration: 0.4 }}
+        >
+          <AboutBox />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+        >
+          <Journey />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <TechStack />
         </motion.div>
