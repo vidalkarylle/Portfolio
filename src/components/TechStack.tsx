@@ -9,7 +9,7 @@ const CATEGORIES: { category: SkillCategory; cmd: string }[] = [
 
 function SkillChip({ name }: { name: string }) {
   return (
-    <span className="border border-matrix/50 bg-matrix/10 px-3 py-1.5 font-mono text-sm text-matrix">
+    <span className="border border-matrix/50 bg-matrix/10 px-3.5 py-2 font-mono text-base text-matrix">
       {name}
     </span>
   )
@@ -17,7 +17,7 @@ function SkillChip({ name }: { name: string }) {
 
 export default function TechStack() {
   return (
-    <div className="mt-16 flex flex-col gap-8">
+    <div className="flex flex-col gap-8">
       <h3 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
         <span className="text-matrix">//</span> TECH STACK
       </h3>
@@ -27,7 +27,7 @@ export default function TechStack() {
             key={cat.category}
             className="clip-corner flex aspect-square flex-col border-2 border-line bg-panel p-6 transition-colors hover:border-matrix"
           >
-            <p className="font-mono text-xl font-bold text-matrix">
+            <p className="font-mono text-2xl font-bold text-matrix">
               {cat.cmd}
             </p>
             <div className="mt-5 flex flex-wrap gap-2.5">

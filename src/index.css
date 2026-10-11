@@ -9,7 +9,7 @@
   --muted: #a3a3a3;
   --faint: #404040;
   --code-bg: #161616;
-  --matrix: #00ff41;
+  --matrix: #00b4d8;
 }
 
 @theme inline {
@@ -94,7 +94,7 @@
 }
 
 @utility text-glow {
-  text-shadow: 0 0 16px rgb(0 255 65 / 0.4);
+  text-shadow: 0 0 16px rgb(0 180 216 / 0.4);
 }
 
 @utility bg-dot-grid {

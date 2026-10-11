@@ -4,17 +4,17 @@ export const journey: JourneyItem[] = [
   {
     id: 'journey-1',
     period: '2022 — 2026',
-    title: 'Information Technology Student',
-    place: '[Your school / university]',
+    title: 'BS Information Technology',
+    place: 'Laguna State Polytechnic University, Los Baños',
     description:
-      '[What you studied — e.g. focused on web development, software engineering, and design; built projects and honed problem-solving skills.]',
+      'Completed a 4-year program, majoring in Web and Mobile Application Development.',
   },
   {
     id: 'journey-2',
-    period: '[Internship period, e.g. 2025]',
-    title: 'UI/UX Designer Intern',
+    period: '2025',
+    title: 'UI/UX Design Intern',
     place: 'Department of Science and Technology',
     description:
-      '[What you did — e.g. designed wireframes and prototypes, ran user research, and crafted accessible interfaces.]',
+      'Designed wireframes, crafted the UI and UX, and built design prototypes.',
   },
 ]

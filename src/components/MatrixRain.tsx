@@ -65,7 +65,7 @@ export default function MatrixRain({ className = '' }: { className?: string }) {
         const char = CHARS[Math.floor(Math.random() * CHARS.length)]
         const x = i * fontSize
         const y = drops[i] * fontSize
-        ctx.fillStyle = Math.random() > 0.92 ? '#b8ffc8' : '#00ff41'
+        ctx.fillStyle = Math.random() > 0.92 ? '#a8e6f0' : '#00b4d8'
         ctx.fillText(char, x, y)
         if (y > h && Math.random() > 0.985) drops[i] = 0
         drops[i]++
