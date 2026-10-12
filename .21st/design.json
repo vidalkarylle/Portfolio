@@ -12,6 +12,11 @@
     },
     {
       "date": "2026-10-02",
+      "choice": "Homepage hero: matrix glitch background",
+      "details": "GlitchMatrixBackground (useGlitchMatrix hook) rendered ONLY on route '/'. Layers: faint green grid base, matrix rain canvas (katakana/digits/symbols, neon green, bright head, fading trail, ~30fps), green noise grain flicker, periodic glitch tears + RGB split + dropouts, SVG feDisplacementMap warp, CRT scanlines, radial vignette, text backdrop. Cursor-proximity brighten (disabled on touch). ENTER SYSTEM triggers a glitch burst before navigating. prefers-reduced-motion shows a static dim frame. Pauses on tab-hidden and off-screen (IntersectionObserver). DPR + resize handled. Other pages (Work/About/Contact) unchanged."
+    },
+    {
+      "date": "2026-10-02",
       "choice": "Projects page: hacker terminal / project database",
       "details": "Near-black bg (#050505) with fixed faint green grid (GridBackground). Neon green #00ff41 accents, off-white #f2f2f2 headings. Oxanium (weights 300-500, font-display) for display headings and project titles, uppercase. 'Courier New', Courier, monospace (font-mono) for nav, labels, descriptions, tags. Section header [02] WORK_ARCHIVE / SELECTED PROJECTS. Hero: PROJECT DATABASE label, huge PROJECTS heading, description. Vertical project list (ProjectRow) with index, category+year, title, description, TagChips, arrow. Hover: border brightens, title green glow, arrow shifts. SYSTEM ONLINE nav indicator. Projects data now has id/category/year/title/description/tags[]/url. Seeded: 90 Legends, Malinta-Connect, ShoeSpot."
     }

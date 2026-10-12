@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { profile } from '../data/profile'
 import { useTypewriter } from '../hooks/useTypewriter'
+import GlitchMatrixBackground from '../components/GlitchMatrixBackground'
 
 const NAME = profile.name
 
@@ -18,13 +20,21 @@ const item = {
 export default function Home() {
   const { charIndex } = useTypewriter([NAME], 80, 1400, true)
   const typed = NAME.slice(0, charIndex)
+  const [burst, setBurst] = useState(0)
+
+  const handleEnter = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setBurst((b) => b + 1)
+    window.setTimeout(() => {
+      window.location.hash = '#/projects'
+    }, 350)
+  }
 
   return (
     <section className="relative flex min-h-screen flex-col overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 opacity-40 [background-image:linear-gradient(rgb(255_255_255/0.05)_1px,transparent_1px),linear-gradient(90deg,rgb(255_255_255/0.05)_1px,transparent_1px)] [background-size:48px_48px]" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-0 bg-scanlines" aria-hidden="true" />
+      <GlitchMatrixBackground burst={burst} />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-4 py-32 sm:px-6">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-4 py-32 sm:px-6">
         <motion.div
           variants={container}
           initial="hidden"
@@ -61,6 +71,7 @@ export default function Home() {
           <motion.div variants={item}>
             <a
               href="#/projects"
+              onClick={handleEnter}
               className="group inline-flex items-center gap-3 border-2 border-matrix px-7 py-3.5 font-mono text-sm tracking-[0.2em] text-matrix transition-all duration-200 hover:bg-matrix hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-matrix"
             >
               ENTER SYSTEM
@@ -70,7 +81,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-4 pb-8 sm:px-6">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 pb-8 sm:px-6">
         <span className="font-mono text-xs tracking-[0.2em] text-muted">
           STATUS: AVAILABLE
         </span>
