@@ -18,8 +18,8 @@ function SkillChip({ name }: { name: string }) {
 export default function TechStack() {
   return (
     <div className="flex flex-col gap-8">
-      <h3 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
-        <span className="text-matrix">//</span> TECH STACK
+      <h3 className="text-center font-display text-3xl font-medium tracking-tight uppercase text-text sm:text-4xl">
+        TECH STACK
       </h3>
       <div className="grid gap-5 sm:grid-cols-3">
         {CATEGORIES.map((cat) => (

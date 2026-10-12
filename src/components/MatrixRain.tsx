@@ -60,12 +60,12 @@ export default function MatrixRain({ className = '' }: { className?: string }) {
       const h = canvas.clientHeight
       ctx.fillStyle = `rgba(${bg[0]}, ${bg[1]}, ${bg[2]}, 0.09)`
       ctx.fillRect(0, 0, w, h)
-      ctx.font = `${fontSize}px "JetBrains Variable Mono", monospace`
+      ctx.font = `${fontSize}px "Courier New", monospace`
       for (let i = 0; i < columns; i++) {
         const char = CHARS[Math.floor(Math.random() * CHARS.length)]
         const x = i * fontSize
         const y = drops[i] * fontSize
-        ctx.fillStyle = Math.random() > 0.92 ? '#a8e6f0' : '#00b4d8'
+        ctx.fillStyle = Math.random() > 0.92 ? '#b8ffc8' : '#00ff41'
         ctx.fillText(char, x, y)
         if (y > h && Math.random() > 0.985) drops[i] = 0
         drops[i]++

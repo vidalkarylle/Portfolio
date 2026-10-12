@@ -3,7 +3,17 @@
     {
       "date": "2026-10-02",
       "choice": "Matrix vibe redesign",
-      "details": "Green (#00ff41) added as the single accent on the monochrome base, overriding the earlier no-accent rule per user request. Green is used for: hero digital-rain canvas background, blinking cursor, terminal prompt markers (>, $, //, 01_). Hero typewriter loops (type -> hold -> delete -> retype). Name set to KARYLLE VIDAL."
+      "details": "Green (#00ff41) added as the single accent on the monochrome base. Hero digital-rain canvas, blinking cursor, terminal prompt markers. Hero typewriter loops. Name set to KARYLLE VIDAL."
+    },
+    {
+      "date": "2026-10-02",
+      "choice": "Multi-page terminal site",
+      "details": "Hash-based routing (useHashRoute). Home = hero only; About/Projects/Contact are separate pages. Dark mode only. Green matrix rain."
+    },
+    {
+      "date": "2026-10-02",
+      "choice": "Projects page: hacker terminal / project database",
+      "details": "Near-black bg (#050505) with fixed faint green grid (GridBackground). Neon green #00ff41 accents, off-white #f2f2f2 headings. Oxanium (weights 300-500, font-display) for display headings and project titles, uppercase. 'Courier New', Courier, monospace (font-mono) for nav, labels, descriptions, tags. Section header [02] WORK_ARCHIVE / SELECTED PROJECTS. Hero: PROJECT DATABASE label, huge PROJECTS heading, description. Vertical project list (ProjectRow) with index, category+year, title, description, TagChips, arrow. Hover: border brightens, title green glow, arrow shifts. SYSTEM ONLINE nav indicator. Projects data now has id/category/year/title/description/tags[]/url. Seeded: 90 Legends, Malinta-Connect, ShoeSpot."
     }
   ]
 }

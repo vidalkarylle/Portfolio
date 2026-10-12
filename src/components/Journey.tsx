@@ -3,8 +3,8 @@ import { journey } from '../data/journey'
 export default function Journey() {
   return (
     <div className="flex flex-col gap-8">
-      <h3 className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
-        <span className="text-matrix">//</span> MY JOURNEY
+      <h3 className="text-center font-display text-3xl font-medium tracking-tight uppercase text-text sm:text-4xl">
+        MY JOURNEY
       </h3>
       <div className="relative flex flex-col gap-10 border-l-2 border-line pl-7">
         {journey.map((item) => (

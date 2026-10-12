@@ -1,33 +1,35 @@
 import { motion } from 'framer-motion'
 import { projects } from '../data/projects'
-import ProjectCard from '../components/ProjectCard'
+import SectionHeader from '../components/SectionHeader'
+import ProjectRow from '../components/ProjectRow'
 
 export default function Projects() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden py-24">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgb(0_180_216/0.15)_1px,transparent_1px),linear-gradient(90deg,rgb(0_180_216/0.15)_1px,transparent_1px)] [background-size:40px_40px] [transform:perspective(1200px)_rotateX(12deg)]" />
-        <div className="absolute inset-0 bg-scanlines" />
-      </div>
+    <section className="relative min-h-screen px-4 pb-16 pt-[104px] sm:px-8 lg:px-[135px]">
+      <div className="mx-auto max-w-[1640px]">
+        <SectionHeader left="[02] WORK_ARCHIVE" right="SELECTED PROJECTS" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex justify-center">
-          <h2 className="text-center font-mono text-4xl font-bold tracking-tight sm:text-6xl">
-            <span className="text-matrix">01_</span>projects
-          </h2>
+        <div className="mt-[70px]">
+          <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-matrix">
+            &gt; PROJECT DATABASE
+          </p>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="mt-3 font-display text-[clamp(3rem,7vw,6.5rem)] font-light uppercase leading-[1] tracking-[0.02em] whitespace-nowrap text-[#f2f2f2] [text-shadow:0_0_40px_rgb(242_242_242/0.15)]"
+          >
+            PROJECTS
+          </motion.h1>
+          <p className="mt-4 max-w-[440px] font-mono text-sm leading-relaxed text-matrix/80">
+            A collection of digital experiences, interfaces, and experiments built
+            through code, design, and curiosity.
+          </p>
         </div>
 
-        <div className="mt-16 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 border-t border-matrix/50">
           {projects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className={i % 2 === 1 ? 'lg:mt-16' : ''}
-            >
-              <ProjectCard project={project} />
-            </motion.div>
+            <ProjectRow key={project.id} project={project} index={i} />
           ))}
         </div>
       </div>

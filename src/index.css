@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a0a0a;
-  --panel: #111111;
+  --bg: #050505;
+  --panel: #0a0a0a;
   --line: #262626;
   --line-strong: #404040;
   --text: #ffffff;
   --muted: #a3a3a3;
   --faint: #404040;
   --code-bg: #161616;
-  --matrix: #00b4d8;
+  --matrix: #00ff41;
 }
 
 @theme inline {
@@ -23,8 +23,7 @@
   --color-code-bg: var(--code-bg);
   --color-matrix: var(--matrix);
 
-  --font-mono: "JetBrains Variable Mono", ui-monospace, SFMono-Regular, Menlo,
-    Consolas, monospace;
+  --font-mono: 'Courier New', Courier, monospace;
   --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Oxanium", "Inter Variable", system-ui, sans-serif;
 
@@ -94,7 +93,7 @@
 }
 
 @utility text-glow {
-  text-shadow: 0 0 16px rgb(0 180 216 / 0.4);
+  text-shadow: 0 0 16px rgb(0 255 65 / 0.4);
 }
 
 @utility bg-dot-grid {

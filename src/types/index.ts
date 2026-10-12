@@ -1,10 +1,10 @@
 export interface Project {
   id: string
   title: string
+  category: string
   description: string
   tags: string[]
-  github?: string
-  demo?: string
+  url: string
   year: number
 }
 

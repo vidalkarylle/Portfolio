@@ -5,7 +5,7 @@ interface SectionHeadingProps {
 
 export default function SectionHeading({ title, index }: SectionHeadingProps) {
   return (
-    <h2 className="font-mono text-xl font-bold tracking-tight sm:text-2xl">
+    <h2 className="font-display text-xl font-medium tracking-tight sm:text-2xl">
       {index ? (
         <>
           <span className="text-matrix">{index}_</span>
