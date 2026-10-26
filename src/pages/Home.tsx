@@ -81,12 +81,9 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-4 pb-8 sm:px-6">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl items-center px-4 pb-8 sm:px-6">
         <span className="font-mono text-xs tracking-[0.2em] text-muted">
           STATUS: AVAILABLE
-        </span>
-        <span className="font-mono text-xs tracking-[0.2em] text-muted">
-          SCROLL TO EXPLORE &gt;
         </span>
       </div>
     </section>

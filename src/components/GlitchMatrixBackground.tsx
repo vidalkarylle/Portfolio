@@ -138,7 +138,13 @@ function useGlitchMatrix(
         ctx.fillText(ch, x, y)
         ctx.globalAlpha = 1
         col.y += col.speed
-        if (y > h && Math.random() > 0.985) col.y = Math.floor(Math.random() * -40)
+        if (y > h + fontSize * 2) {
+          col.y = Math.floor(Math.random() * -60)
+          col.speed = rand(0.4, 1.6)
+        } else if (Math.random() > 0.996) {
+          col.y = Math.floor(Math.random() * -40)
+          col.speed = rand(0.4, 1.6)
+        }
       }
       if (t > nextGlitch || t < stateRef.current.burstEnd) {
         if (t > glitchEnd) {
@@ -150,15 +156,23 @@ function useGlitchMatrix(
     }
 
     const loop = (t: number) => {
-      raf = requestAnimationFrame(loop)
       if (!running) return
-      if (t - last < 1000 / CONFIG.fps) return
+      raf = requestAnimationFrame(loop)
+      const delta = Math.min(t - last, 100)
+      if (delta < 1000 / CONFIG.fps) return
       last = t
       frame++
-      drawRain(t)
+      try {
+        drawRain(t)
+      } catch (err) {
+        console.error('[matrix]', err)
+      }
     }
 
     const start = () => {
+      running = true
+      last = 0
+      nextGlitch = performance.now() + rand(CONFIG.glitchIntervalMin, CONFIG.glitchIntervalMax)
       if (!raf) raf = requestAnimationFrame(loop)
     }
     const stop = () => {

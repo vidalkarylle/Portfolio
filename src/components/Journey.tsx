@@ -1,33 +1,34 @@
+import { motion } from 'framer-motion'
 import { journey } from '../data/journey'
 
 export default function Journey() {
   return (
-    <div className="flex flex-col gap-8">
-      <h3 className="text-center font-display text-3xl font-medium tracking-tight uppercase text-text sm:text-4xl">
-        MY JOURNEY
-      </h3>
-      <div className="relative flex flex-col gap-10 border-l-2 border-line pl-7">
-        {journey.map((item) => (
-          <div key={item.id} className="relative flex flex-col gap-2.5">
-            <span
-              className="absolute -left-[35px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-matrix bg-bg"
-              aria-hidden="true"
-            />
-            <p className="inline-block w-fit rounded-md border border-matrix/40 bg-matrix/10 px-3 py-1 font-mono text-xs font-bold text-matrix">
-              {item.period}
-            </p>
-            <p className="text-xl font-bold text-text sm:text-2xl">
-              {item.title}
-            </p>
-            <p className="font-mono text-sm font-bold text-matrix">
-              {item.place}
-            </p>
-            <p className="max-w-xl text-base leading-relaxed text-muted">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
+    <ol className="relative flex flex-col gap-10 border-l border-matrix/50 pl-7">
+      {journey.map((item, index) => (
+        <motion.li
+          key={item.id}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.45, delay: index * 0.06 }}
+          className="relative flex flex-col gap-2"
+        >
+          <span
+            className="absolute top-1.5 -left-7 h-2.5 w-2.5 -translate-x-1/2 bg-matrix"
+            aria-hidden="true"
+          />
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-matrix">
+            {item.period}
+          </p>
+          <h2 className="text-xl font-medium text-[#f2f2f2] sm:text-2xl">
+            {item.title}
+          </h2>
+          <p className="font-mono text-sm text-matrix/80">{item.place}</p>
+          <p className="max-w-xl text-base leading-relaxed text-muted">
+            {item.description}
+          </p>
+        </motion.li>
+      ))}
+    </ol>
   )
 }

@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'
+import JourneyPage from './pages/Journey'
 import Contact from './pages/Contact'
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
             {route === '/' && <Home />}
             {route === '/about' && <About />}
             {route === '/projects' && <Projects />}
+            {route === '/journey' && <JourneyPage />}
             {route === '/contact' && <Contact />}
           </main>
           <Footer />

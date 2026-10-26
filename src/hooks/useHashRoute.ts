@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
 
-export type Route = '/' | '/about' | '/projects' | '/contact'
+export type Route = '/' | '/about' | '/projects' | '/journey' | '/contact'
 
-const VALID_ROUTES: readonly Route[] = ['/', '/about', '/projects', '/contact']
+const VALID_ROUTES: readonly Route[] = [
+  '/',
+  '/about',
+  '/projects',
+  '/journey',
+  '/contact',
+]
 
 function parseHash(): Route {
   const h = window.location.hash.replace(/^#/, '') || '/'

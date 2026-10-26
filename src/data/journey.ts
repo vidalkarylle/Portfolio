@@ -3,11 +3,11 @@ import type { JourneyItem } from '../types'
 export const journey: JourneyItem[] = [
   {
     id: 'journey-1',
-    period: '2022 — 2026',
-    title: 'BS Information Technology',
+    period: '2022',
+    title: 'Started BS Information Technology',
     place: 'Laguna State Polytechnic University, Los Baños',
     description:
-      'Completed a 4-year program, majoring in Web and Mobile Application Development.',
+      'Began a 4-year program majoring in Web and Mobile Application Development.',
   },
   {
     id: 'journey-2',
@@ -15,6 +15,14 @@ export const journey: JourneyItem[] = [
     title: 'UI/UX Design Intern',
     place: 'Department of Science and Technology',
     description:
-      'Designed wireframes, crafted the UI and UX, and built design prototypes.',
+      'On-the-job training: designed wireframes, crafted UI and UX, and built design prototypes.',
+  },
+  {
+    id: 'journey-3',
+    period: '2026',
+    title: 'Graduated and started this portfolio',
+    place: 'Laguna State Polytechnic University, Los Baños',
+    description:
+      'Completed the BS Information Technology program and started building a public body of work.',
   },
 ]

@@ -6,6 +6,7 @@ import type { Route } from '../hooks/useHashRoute'
 const LINKS = [
   { id: '/projects', label: 'Projects' },
   { id: '/about', label: 'About' },
+  { id: '/journey', label: 'Journey' },
   { id: '/contact', label: 'Contact' },
 ] as const
 
@@ -29,7 +30,7 @@ export default function Navbar({ route }: NavbarProps) {
           KV
         </a>
 
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 lg:gap-8 md:flex">
           {LINKS.map((link) => (
             <a
               key={link.id}
