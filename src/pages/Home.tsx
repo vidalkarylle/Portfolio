@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { profile } from '../data/profile'
 import { useTypewriter } from '../hooks/useTypewriter'
 import GlitchMatrixBackground from '../components/GlitchMatrixBackground'
+import { navigateTo } from '../hooks/useRoute'
 
 const NAME = profile.name
 
@@ -26,7 +27,7 @@ export default function Home() {
     e.preventDefault()
     setBurst((b) => b + 1)
     window.setTimeout(() => {
-      window.location.hash = '#/projects'
+      navigateTo('/projects')
     }, 350)
   }
 
@@ -70,7 +71,7 @@ export default function Home() {
 
           <motion.div variants={item}>
             <a
-              href="#/projects"
+              href="/projects"
               onClick={handleEnter}
               className="group inline-flex items-center gap-3 border-2 border-matrix px-7 py-3.5 font-mono text-sm tracking-[0.2em] text-matrix transition-all duration-200 hover:bg-matrix hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-matrix"
             >

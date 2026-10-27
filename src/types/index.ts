@@ -5,6 +5,7 @@ export interface Project {
   description: string
   tags: string[]
   url: string
+  liveUrl?: string
   year: number
 }
 

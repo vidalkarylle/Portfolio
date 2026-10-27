@@ -19,6 +19,7 @@ export const projects: Project[] = [
       'A barangay progressive web application designed to simplify community services and digital document requests for residents and officials.',
     tags: ['React', 'TypeScript', 'PostgreSQL', 'API'],
     url: 'https://github.com/vidalkarylle/malinta-connect',
+    liveUrl: 'https://malinta-connect.vercel.app/',
     year: 2024,
   },
   {

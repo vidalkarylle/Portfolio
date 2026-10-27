@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import type { Route } from '../hooks/useHashRoute'
+import { navigateTo, type Route } from '../hooks/useRoute'
 
 const LINKS = [
   { id: '/projects', label: 'Projects' },
@@ -24,7 +24,8 @@ export default function Navbar({ route }: NavbarProps) {
         aria-label="Main navigation"
       >
         <a
-          href="#/"
+          href="/"
+          onClick={(e) => navigateTo('/', e)}
           className="font-mono text-lg font-bold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-matrix"
         >
           KV
@@ -34,7 +35,8 @@ export default function Navbar({ route }: NavbarProps) {
           {LINKS.map((link) => (
             <a
               key={link.id}
-              href={`#${link.id}`}
+              href={link.id}
+              onClick={(e) => navigateTo(link.id, e)}
               className={`font-mono text-[11px] uppercase tracking-[0.25em] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-matrix ${
                 route === link.id ? 'text-matrix' : 'text-muted hover:text-matrix'
               }`}
@@ -73,8 +75,11 @@ export default function Navbar({ route }: NavbarProps) {
               {LINKS.map((link) => (
                 <a
                   key={link.id}
-                  href={`#${link.id}`}
-                  onClick={() => setOpen(false)}
+                  href={link.id}
+                  onClick={(e) => {
+                    navigateTo(link.id, e)
+                    setOpen(false)
+                  }}
                   className={`rounded-md px-2 py-2 font-mono text-[11px] uppercase tracking-[0.25em] transition-colors ${
                     route === link.id ? 'text-matrix' : 'text-muted hover:text-matrix'
                   }`}

@@ -1,5 +1,5 @@
 import { MotionConfig } from 'framer-motion'
-import { useHashRoute } from './hooks/useHashRoute'
+import { useRoute } from './hooks/useRoute'
 import GridBackground from './components/GridBackground'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -10,7 +10,7 @@ import JourneyPage from './pages/Journey'
 import Contact from './pages/Contact'
 
 export default function App() {
-  const route = useHashRoute()
+  const route = useRoute()
 
   return (
     <MotionConfig reducedMotion="user">
